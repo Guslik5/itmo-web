@@ -1,0 +1,9 @@
+.element {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.element--hovered {
+    transform: translateY(-2px);
+}
