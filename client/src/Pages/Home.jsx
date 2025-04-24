@@ -5,6 +5,7 @@ import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import image from '../assets/image.jpg'
 import CardBmw from "../Components/CardBmw.jsx";
 import Jumbotrone from "../Components/Jumbotrone.jsx";
+import {AccordionQuestions} from "../Components/AccordionQuestions.jsx";
 
 export const Home = () => {
     function handleClickCardBmw(model) {
@@ -50,6 +51,7 @@ export const Home = () => {
                 </Container>
             </div>
             <Jumbotrone/>
+            <AccordionQuestions/>
         </>
     )
 }

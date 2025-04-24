@@ -12,8 +12,8 @@ export default function Navibar() {
                 <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
                     <Nav className="mx-4">
                         <NavItemWithAnimation to="/" label="Home" />
-                        <NavItemWithAnimation to="/landing" label="Landing" />
-                        <NavItemWithAnimation to="/about" label="About" />
+                        <NavItemWithAnimation to="/cars" label="Cars" />
+                        <NavItemWithAnimation to="/owners" label="Owners" />
                         <NavItemWithAnimation to="/contacts" label="Contacts" />
                     </Nav>
                 </Navbar.Collapse>
