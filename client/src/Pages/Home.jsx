@@ -6,6 +6,7 @@ import image from '../assets/image.jpg'
 import CardBmw from "../Components/CardBmw.jsx";
 import Jumbotrone from "../Components/Jumbotrone.jsx";
 import {AccordionQuestions} from "../Components/AccordionQuestions.jsx";
+import {TypesOfCars} from "../Components/TypesOfCars.jsx";
 
 export const Home = () => {
     function handleClickCardBmw(model) {
@@ -16,6 +17,7 @@ export const Home = () => {
     return (
         <>
             <Slider/>
+            <TypesOfCars/>
             <div className="bg-dark">
                 <Container className="d-flex justify-content-center align-items-center p-3">
                     <Row>
