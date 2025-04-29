@@ -1,0 +1,40 @@
+.my-component {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    text-align: center;
+}
+
+.component-image {
+    max-width: 100%; /* Make the image responsive */
+    height: auto;
+    max-height: 600px; /* Set maximum height */
+    object-fit: contain; /* Important: maintain aspect ratio and fit within the box */
+    border-radius: 8px; /* Optional: add rounded corners */
+}
+
+.text-container {
+    padding-left: 20px;
+}
+
+.advantages {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.advantage-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: solid 1px white;
+    padding: 10px;
+}
+
+.advantages strong {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}

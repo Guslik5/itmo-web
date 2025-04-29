@@ -1,93 +1,61 @@
 import React from "react";
 import {Button, Card, Col, Container, Row} from "react-bootstrap";
-import image from '../assets/image.jpg';
 import '../css/OurCars.css';
+import {CardOurCars} from './CardOurCars.jsx'
 
-export const OurCars = () => (
-    <>
-        <Container fluid className={"bg-black pb-5"}>
-            <Container>
-                <Row className="mx-5">
-                    <Col>
-                        <Card className="card-responsive">
-                            <Row>
-                                <Col md={6}>
-                                    <Card.Img variant="bottom" src={image} width={"100%"}  />
-                                </Col>
-                                <Col md={6}>
-                                    <Card.Body className="d-flex flex-column justify-content-between p-4" style={{minHeight: "271px"}}>
-                                        <Card.Title>Марка модель</Card.Title>
-                                        <Card.Text>
-                                                <p>куцикуцуиуц куцпук екцуп цукп куп куцп цукп цкуп gurehguw reuhroghewr ggiregohwreoighrewiog grewg</p>
-                                        </Card.Text>
-                                        <Button variant="dark" className="learn-more-button">Learn more</Button>
-                                    </Card.Body>
-                                </Col>
-                            </Row>
-                        </Card>
-                    </Col>
-                </Row>
-                <Row className="m-5">
-                    <Col>
-                        <Card className="card-responsive">
-                            <Row>
-                                <Col md={6}>
-                                    <Card.Img variant="bottom" src={image} width={"100%"}  />
-                                </Col>
-                                <Col md={6}>
-                                    <Card.Body className="d-flex flex-column justify-content-between p-4" style={{minHeight: "271px"}}>
-                                        <Card.Title>Марка модель</Card.Title>
-                                        <Card.Text>
-                                            <p>куцикуцуиуц куцпук екцуп цукп куп куцп цукп цкуп gurehguw reuhroghewr ggiregohwreoighrewiog grewg</p>
-                                        </Card.Text>
-                                        <Button variant="dark" className="learn-more-button">Learn more</Button>
-                                    </Card.Body>
-                                </Col>
-                            </Row>
-                        </Card>
-                    </Col>
-                </Row>
-                <Row className="m-5">
-                    <Col>
-                        <Card className="card-responsive">
-                            <Row>
-                                <Col md={6}>
-                                    <Card.Img variant="bottom" src={image} width={"100%"}  />
-                                </Col>
-                                <Col md={6}>
-                                    <Card.Body className="d-flex flex-column justify-content-between p-4" style={{minHeight: "271px"}}>
-                                        <Card.Title>Марка модель</Card.Title>
-                                        <Card.Text>
-                                            <p>куцикуцуиуц куцпук екцуп цукп куп куцп цукп цкуп gurehguw reuhroghewr ggiregohwreoighrewiog grewg</p>
-                                        </Card.Text>
-                                        <Button variant="dark" className="learn-more-button">Learn more</Button>
-                                    </Card.Body>
-                                </Col>
-                            </Row>
-                        </Card>
-                    </Col>
-                </Row>
-                <Row className="mx-5">
-                    <Col>
-                        <Card className="card-responsive">
-                            <Row>
-                                <Col md={6}>
-                                    <Card.Img variant="bottom" src={image} width={"100%"}  />
-                                </Col>
-                                <Col md={6}>
-                                    <Card.Body className="d-flex flex-column justify-content-between p-4" style={{minHeight: "271px"}}>
-                                        <Card.Title>Марка модель</Card.Title>
-                                        <Card.Text>
-                                            <p>куцикуцуиуц куцпук екцуп цукп куп куцп цукп цкуп gurehguw reuhroghewr ggiregohwreoighrewiog grewg</p>
-                                        </Card.Text>
-                                        <Button variant="dark" className="learn-more-button">Learn more</Button>
-                                    </Card.Body>
-                                </Col>
-                            </Row>
-                        </Card>
-                    </Col>
-                </Row>
+// временный вариант, потом создам в useEffect ассинхронный динамический импорт, когда сделаю бек
+import car1 from '../assets/image.jpg';
+
+const images = {
+    'bmw1.jpg': car1,
+};
+
+const data = [
+    {
+        name: "bmw 1 series",
+        description: "top car with top motor",
+        image: "bmw1.jpg",
+    },
+    {
+        name: "bmw 2 series",
+        description: "top car with top motor",
+        image: "bmw1.jpg",
+    },
+    {
+        name: "bmw 3 series",
+        description: "top car with top motor",
+        image: "bmw1.jpg",
+    },
+    {
+        name: "bmw 4 series",
+        description: "top car with top motor",
+        image: "bmw1.jpg",
+    }
+]
+
+export const OurCars = () => {
+    function fetchCars() {
+        // ЗАПРОС К БД НА ПОЛУЧЕНИЕ ДАННЫХ
+    }
+
+    return (
+        <>
+            <Container fluid className={"bg-black pb-5"}>
+                <Container>
+
+                    {data.map((car,index) => (
+                        <Row className={`mx-5 ${index !== 0 ? 'm-5' : ''}`} key={index}>
+                            <Col>
+                                <CardOurCars
+                                    image={images[car.image]}
+                                    name={car.name}
+                                    description={car.description}
+                                />
+                            </Col>
+                        </Row>
+                    ))}
+                </Container>
             </Container>
-        </Container>
-    </>
-)
+        </>
+    )
+}

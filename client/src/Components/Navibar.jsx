@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import '../css/Navibar.css';
 import { Button, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import logo from "../assets/Icons/logo.png"
 
 export default function Navibar() {
     return (
         <>
             <Navbar collapseOnSelect expand="lg" className="bg-dark" variant='dark'>
-                <Navbar.Brand className={"m-3 mx-5"}>Logo</Navbar.Brand>
+                <Navbar.Brand className={"m-3 mx-5"}><img src={logo} alt="logo" width="150px"/></Navbar.Brand>
                 <Navbar.Toggle className="mx-4" aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
                     <Nav className="mx-4">

@@ -7,6 +7,7 @@ import CardBmw from "../Components/CardBmw.jsx";
 import Jumbotrone from "../Components/Jumbotrone.jsx";
 import {AccordionQuestions} from "../Components/AccordionQuestions.jsx";
 import {TypesOfCars} from "../Components/TypesOfCars.jsx";
+import {About} from "../Components/About.jsx";
 
 export const Home = () => {
     function handleClickCardBmw(model) {
@@ -54,6 +55,7 @@ export const Home = () => {
             </div>
             <Jumbotrone/>
             <AccordionQuestions/>
+            <About></About>
         </>
     )
 }
